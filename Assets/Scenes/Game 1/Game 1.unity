@@ -269,6 +269,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2122467079}
   - 114: {fileID: 2122467078}
+  - 114: {fileID: 2122467080}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 682b980360aad8644862190a4f2556a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameLength: 10
   dispensers:
   - {fileID: 1947375921}
 --- !u!4 &2122467079
@@ -301,3 +303,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &2122467080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122467077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4c554f2fb303b4fb33785eff1f5e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
