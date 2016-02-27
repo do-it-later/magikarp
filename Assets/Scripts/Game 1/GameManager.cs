@@ -5,15 +5,15 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public float gameLength;
-    public List<GameObject> dispensers;
+    public List<GameObject> dispenserList;
 
     void Start()
     {
-        foreach(GameObject obj in dispensers)
+        for(int i = 0; i < dispenserList.Count; ++i)
         {
-            Dispenser dispenser = obj.GetComponent<Dispenser>();
+            Dispenser dispenser = dispenserList[i].GetComponent<Dispenser>();
 
-            dispenser.objectName = "Object";
+            dispenser.objectName = "Object " + (i + 1).ToString();
             dispenser.topLeft = new Vector2(8, -4.0f);
             dispenser.bottomRight = new Vector2(8, 0.5f);
             dispenser.minSpeed = 3.0f;
@@ -27,12 +27,18 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Play()
     {
-        dispensers[0].GetComponent<Dispenser>().StartDispenser();
+        foreach(GameObject dispenser in dispenserList)
+        {
+            dispenser.GetComponent<Dispenser>().StartDispenser();
+        }
 
         yield return new WaitForSeconds(gameLength);
 
-        dispensers[0].GetComponent<Dispenser>().StopDispenser();
+        foreach(GameObject dispenser in dispenserList)
+        {
+            dispenser.GetComponent<Dispenser>().StopDispenser();
+        }
 
-        Debug.Log(dispensers[0].GetComponent<Dispenser>().GetCount());
+        Debug.Log(dispenserList[0].GetComponent<Dispenser>().GetCount());
     }
 }
