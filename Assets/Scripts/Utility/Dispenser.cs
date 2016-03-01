@@ -38,7 +38,7 @@ public class Dispenser : MonoBehaviour
             GameObject dispensedObject = ObjectPool.instance.GetObject(objectName, false);
             Vector2 position = new Vector2(Random.Range(bottomRight.x, topLeft.x), Random.Range(bottomRight.y, topLeft.y));
             dispensedObject.transform.position = position;
-            dispensedObject.GetComponent<GenericObject>().speed = Random.Range(minSpeed, maxSpeed);
+            dispensedObject.GetComponent<BaseObject>().speed = Random.Range(minSpeed, maxSpeed);
             count++;
         }
     }

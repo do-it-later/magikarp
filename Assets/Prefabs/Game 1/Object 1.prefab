@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 405218}
   - 212: {fileID: 21238246}
-  - 114: {fileID: 11481920}
+  - 114: {fileID: 11411322}
   m_Layer: 0
   m_Name: Object 1
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11481920
+--- !u!114 &11411322
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 105364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6c3b169384f644d8038b2b4b38b32b, type: 3}
+  m_Script: {fileID: 11500000, guid: 421f5f13575f5ae43b8aeabd828cdb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
