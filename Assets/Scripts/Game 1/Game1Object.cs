@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class GenericObject : MonoBehaviour
+public class Game1Object : BaseObject
 {
-    public float speed;
-
     void Update()
     {
         Vector3 position = transform.position;

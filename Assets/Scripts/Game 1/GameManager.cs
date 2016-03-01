@@ -4,11 +4,19 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    public float gameLength;
+    public float roundDuration;
+    public float endGameDuration;
+    public int numberOfRounds;
+    
     public List<GameObject> dispenserList;
+    public List<bool> activeDispenser;
+
+    private int currentRound;
 
     void Start()
     {
+        currentRound = 0;
+
         for(int i = 0; i < dispenserList.Count; ++i)
         {
             Dispenser dispenser = dispenserList[i].GetComponent<Dispenser>();
@@ -32,7 +40,7 @@ public class GameManager : MonoBehaviour
             dispenser.GetComponent<Dispenser>().StartDispenser();
         }
 
-        yield return new WaitForSeconds(gameLength);
+        yield return new WaitForSeconds(roundDuration);
 
         foreach(GameObject dispenser in dispenserList)
         {
@@ -40,5 +48,12 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log(dispenserList[0].GetComponent<Dispenser>().GetCount());
+
+        currentRound++;
+
+        yield return new WaitForSeconds(endGameDuration);
+
+        if(currentRound < numberOfRounds)
+            StartCoroutine(Countdown.Instance.StartCountdown(Play));
     }
 }
