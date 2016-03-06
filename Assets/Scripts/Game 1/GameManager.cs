@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     private int currentRound;
 
+    private List<int> objectsToCount;
+
     void Start()
     {
         currentRound = 0;
@@ -30,13 +32,29 @@ public class GameManager : MonoBehaviour
             dispenser.maxTime = 1.5f;
         }
 
+        objectsToCount = new List<int>();
+
         StartCoroutine(Countdown.Instance.StartCountdown(Play));
     }
 
     IEnumerator Play()
     {
+        objectsToCount.Clear();
+        int count = 0;
+        while(count <= currentRound)
+        {
+            int choice = Random.Range(0, dispenserList.Count);
+
+            if(!objectsToCount.Contains(choice))
+            {
+                objectsToCount.Add(choice);
+                ++count;
+            }
+        }
+
         foreach(GameObject dispenser in dispenserList)
         {
+            dispenser.GetComponent<Dispenser>().ClearCount();
             dispenser.GetComponent<Dispenser>().StartDispenser();
         }
 
@@ -47,7 +65,10 @@ public class GameManager : MonoBehaviour
             dispenser.GetComponent<Dispenser>().StopDispenser();
         }
 
-        Debug.Log(dispenserList[0].GetComponent<Dispenser>().GetCount());
+        foreach(int i in objectsToCount)
+        {
+            Debug.Log(dispenserList[i].GetComponent<Dispenser>().GetCount());
+        }
 
         currentRound++;
 

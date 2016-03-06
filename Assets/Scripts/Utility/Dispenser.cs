@@ -28,6 +28,11 @@ public class Dispenser : MonoBehaviour
         return count;
     }
 
+    public void ClearCount()
+    {
+        count = 0;
+    }
+
     IEnumerator Dispense()
     {
         while(true)
