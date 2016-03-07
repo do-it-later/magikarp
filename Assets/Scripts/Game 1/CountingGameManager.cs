@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameManager : MonoBehaviour
+public class CountingGameManager : MonoBehaviour
 {
     public float roundDuration;
     public float endGameDuration;
@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private int currentRound;
 
     private List<int> objectsToCount;
+
+    private List<CountingGamePlayer> players;
 
     void Start()
     {
@@ -34,11 +36,32 @@ public class GameManager : MonoBehaviour
 
         objectsToCount = new List<int>();
 
+        players = new List<CountingGamePlayer>();
+        for(int i = 0; i < 4; ++i)
+        {
+            players.Add(new CountingGamePlayer());
+        }
+
         StartCoroutine(Countdown.Instance.StartCountdown(Play));
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            players[0].counter++;
+        }
     }
 
     IEnumerator Play()
     {
+        // reset the players counters
+        foreach(CountingGamePlayer player in players)
+        {
+            player.counter = 0;
+        }
+
+        // pick the dispensers to count based on the round number
         objectsToCount.Clear();
         int count = 0;
         while(count <= currentRound)
@@ -52,6 +75,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // reset the dispenser counters and start them
         foreach(GameObject dispenser in dispenserList)
         {
             dispenser.GetComponent<Dispenser>().ClearCount();
@@ -60,21 +84,42 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(roundDuration);
 
+        // stop all of the dispensers
         foreach(GameObject dispenser in dispenserList)
         {
             dispenser.GetComponent<Dispenser>().StopDispenser();
         }
 
+        // display the dispenser counts
+        int dispenserTotal = 0;
         foreach(int i in objectsToCount)
         {
-            Debug.Log(dispenserList[i].GetComponent<Dispenser>().GetCount());
+            dispenserTotal += dispenserList[i].GetComponent<Dispenser>().GetCount();
         }
+        Debug.Log("Total count: " + dispenserTotal);
 
         currentRound++;
 
         yield return new WaitForSeconds(endGameDuration);
 
+        // check which player got the correct amount
+        for(int i = 0; i < 4; ++i)
+        {
+            if(players[i].counter == dispenserTotal)
+            {
+                players[i].roundsWon++;
+            }
+            Debug.Log("Player " + i + ": " + players[i].counter);
+        }
+
+        // if there are still rounds remaining then start the countdown for the next round
         if(currentRound < numberOfRounds)
+        {
             StartCoroutine(Countdown.Instance.StartCountdown(Play));
+        }
+        else
+        {
+            // handle the player with the highest score
+        }
     }
 }
