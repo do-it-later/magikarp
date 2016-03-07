@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Game1Object : BaseObject
+public class CountingGameObject : BaseObject
 {
     void Update()
     {
