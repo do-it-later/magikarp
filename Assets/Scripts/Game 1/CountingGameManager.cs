@@ -47,9 +47,12 @@ public class CountingGameManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        for(int i = 0; i < 4; ++i)
         {
-            players[0].counter++;
+            if(Input.GetKeyDown(InputHelper.instance.DidControllerButtonGetPressed(i + 1, InputHelper.Button.A)))
+            {
+                players[i].counter++;
+            }
         }
     }
 
