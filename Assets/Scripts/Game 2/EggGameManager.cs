@@ -13,7 +13,7 @@ public class EggGameManager : MonoBehaviour {
         dispenser = dispenserObj.GetComponent<EggDispenser>();
         started = false;
 
-        StartCoroutine(Countdown.Instance.StartCountdown(Play));
+        StartCoroutine(Countdown.instance.StartCountdown(Play));
 	}
 
     IEnumerator Play()

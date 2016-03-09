@@ -42,7 +42,7 @@ public class CountingGameManager : MonoBehaviour
             players.Add(new CountingGamePlayer());
         }
 
-        StartCoroutine(Countdown.Instance.StartCountdown(Play));
+        StartCoroutine(Countdown.instance.StartCountdown(Play));
     }
 
     void Update()
@@ -118,7 +118,7 @@ public class CountingGameManager : MonoBehaviour
         // if there are still rounds remaining then start the countdown for the next round
         if(currentRound < numberOfRounds)
         {
-            StartCoroutine(Countdown.Instance.StartCountdown(Play));
+            StartCoroutine(Countdown.instance.StartCountdown(Play));
         }
         else
         {

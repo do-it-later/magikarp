@@ -1,9 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Countdown : Singleton<Countdown>
+public class Countdown : MonoBehaviour
 {
+    public static Countdown instance;
+
     public delegate IEnumerator PlayDelegate();
+
+    void Awake()
+    {
+        // Persistent singleton
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Duplicate instance detected, destroying duplicate Countdown.");
+            Destroy(gameObject);
+        }
+    }
 
     public IEnumerator StartCountdown(PlayDelegate func)
     {
