@@ -6,11 +6,10 @@ public class EggDispenser : MonoBehaviour {
 
     public float columnGap;
     public int eggsToDispense;
+    public List<GameObject> dispenserObjects = new List<GameObject>();
 
     private int eggsRemaining;
     public int EggsRemaining { get { return eggsRemaining; } }
-
-    private Vector3 initialPosition;
 
     private bool dropEgg, dropBomb, dropDoubleBomb;
     private int eggCol, bombCol, doubleBombCol;
@@ -19,7 +18,6 @@ public class EggDispenser : MonoBehaviour {
 
     void Start()
     {
-        initialPosition = transform.position;
         eggsRemaining = eggsToDispense;
     }
 
@@ -82,26 +80,36 @@ public class EggDispenser : MonoBehaviour {
                     doubleBombCol = -1 * (bombCol + eggCol);
                 }
 
-                // Dispense
+
+                foreach( var dispenser in dispenserObjects )
+                {
+                    var dispenserPos = dispenser.transform.position;
+
+                    // Dispense
+                    if( dropEgg )
+                    {
+                        GameObject eggObj = ObjectPool.instance.GetObject("Egg", false);
+                        Vector2 position = new Vector2(dispenserPos.x + columnGap * eggCol, dispenserPos.y);
+                        eggObj.transform.position = position;
+                    }
+                    if( dropBomb )
+                    {
+                        GameObject bombObj = ObjectPool.instance.GetObject("Bomb", false);
+                        Vector2 position = new Vector2(dispenserPos.x + columnGap * bombCol, dispenserPos.y);
+                        bombObj.transform.position = position;
+                    }
+                    if( dropDoubleBomb )
+                    {
+                        GameObject bombObj = ObjectPool.instance.GetObject("Bomb", false);
+                        Vector2 position = new Vector2(dispenserPos.x + columnGap * doubleBombCol, dispenserPos.y);
+                        bombObj.transform.position = position;
+                    }
+                }
+
                 if( dropEgg )
                 {
-                    GameObject eggObj = ObjectPool.instance.GetObject("Egg", false);
-                    Vector2 position = new Vector2(initialPosition.x + columnGap * eggCol, initialPosition.y);
-                    eggObj.transform.position = position;
-                    ++i;
+                    i++;
                     eggsRemaining--;
-                }
-                if( dropBomb )
-                {
-                    GameObject bombObj = ObjectPool.instance.GetObject("Bomb", false);
-                    Vector2 position = new Vector2(initialPosition.x + columnGap * bombCol, initialPosition.y);
-                    bombObj.transform.position = position;
-                }
-                if( dropDoubleBomb )
-                {
-                    GameObject bombObj = ObjectPool.instance.GetObject("Bomb", false);
-                    Vector2 position = new Vector2(initialPosition.x + columnGap * doubleBombCol, initialPosition.y);
-                    bombObj.transform.position = position;
                 }
 
                 yield return new WaitForSeconds( 0.2f );
