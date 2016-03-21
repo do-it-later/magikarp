@@ -11,7 +11,7 @@ public class Dispenser : MonoBehaviour
     public float minTime;
     public float maxTime;
     
-    private int count;
+    protected int count;
 
     public void StartDispenser()
     {
@@ -33,7 +33,7 @@ public class Dispenser : MonoBehaviour
         count = 0;
     }
 
-    IEnumerator Dispense()
+    protected virtual IEnumerator Dispense()
     {
         while(true)
         {
