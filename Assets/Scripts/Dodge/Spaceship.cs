@@ -23,6 +23,17 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
+        if(shieldLevel == 0)
+        {
+            shield.SetActive(false);
+            GetComponent<BoxCollider2D>().size = new Vector2(0.5f, 0.5f);
+        }
+
+        if(dead)
+        {
+            gameObject.SetActive(false);
+        }
+
         float horizontal = InputHelper.instance.GetHorizForController(playerNumber);
         float vertical = InputHelper.instance.GetVertForController(playerNumber);
         Vector2 direction = new Vector2(horizontal, vertical);
@@ -52,13 +63,28 @@ public class Spaceship : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if(col != null)
+        if(collider != null)
         {
-            if(col.tag == "Asteroid")
+            if(collider.gameObject.name.Contains("Asteroid"))
             {
+                if(shieldLevel <= 0)
+                {
+                    dead = true;
+                }
+                else
+                {
+                    shieldLevel--;
+                }
+
+                ObjectPool.instance.PoolObject(collider.gameObject);
             }
         }
+    }
+
+    public bool IsDead()
+    {
+        return dead;
     }
 }
