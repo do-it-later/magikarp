@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 8b5d90f8318cbe146ab92d8cb58f773d
+timeCreated: 1459247030
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: babyAnimate_0
+    21300002: babyAnimate_1
+    21300004: babyAnimate_2
+    21300006: babyAnimate_3
+    21300008: babyAnimate_4
+    21300010: babyAnimate_5
+    21300012: babyAnimate_6
+    21300014: babyAnimate_7
+    21300016: babyAnimate_8
+    21300018: babyAnimate_9
+    21300020: babyAnimate_10
+    21300022: babyAnimate_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: babyAnimate_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 2119
+        width: 328
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.717224, y: 92.59009}
+        - {x: -95.717224, y: 60.590088}
+        - {x: -95.717224, y: -22.409912}
+        - {x: -78.717224, y: -60.409912}
+        - {x: -61.717224, y: -92.40991}
+        - {x: 96.282776, y: -92.40991}
+        - {x: 96.282776, y: 2.590088}
+        - {x: 23.282776, y: 92.59009}
+    - name: babyAnimate_1
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 2119
+        width: 320
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.506287, y: 92.59009}
+        - {x: -93.50629, y: 76.59009}
+        - {x: -93.50629, y: -43.409912}
+        - {x: -55.506287, y: -84.40991}
+        - {x: -41.506287, y: -92.40991}
+        - {x: 90.49371, y: -92.40991}
+        - {x: 94.49371, y: -85.40991}
+        - {x: 94.49371, y: -0.4099121}
+        - {x: -4.5062866, y: 92.59009}
+    - name: babyAnimate_2
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 2119
+        width: 343
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.788452, y: 92.59009}
+        - {x: -98.21155, y: 92.59009}
+        - {x: -100.21155, y: 91.59009}
+        - {x: -100.21155, y: -72.40991}
+        - {x: -96.21155, y: -92.40991}
+        - {x: -26.211548, y: -92.40991}
+        - {x: -23.211548, y: -91.40991}
+        - {x: -17.211548, y: -92.40991}
+        - {x: 63.788452, y: -92.40991}
+        - {x: 100.78845, y: -82.40991}
+        - {x: 100.78845, y: 13.590088}
+    - name: babyAnimate_3
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 2118
+        width: 352
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.67676, y: -53.493774}
+        - {x: -90.67676, y: -91.493774}
+        - {x: -86.67676, y: -92.493774}
+        - {x: 104.32324, y: -92.493774}
+        - {x: 104.32324, y: -16.493774}
+        - {x: 68.32324, y: 22.506226}
+        - {x: -1.6767578, y: 93.506226}
+        - {x: -63.676758, y: 93.506226}
+        - {x: -102.67676, y: 69.506226}
+    - name: babyAnimate_4
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 2118
+        width: 351
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.214355, y: -21.493774}
+        - {x: -97.214355, y: -29.493774}
+        - {x: -68.214355, y: -92.493774}
+        - {x: 84.785645, y: -92.493774}
+        - {x: 103.785645, y: -85.493774}
+        - {x: 103.785645, y: -37.493774}
+        - {x: 63.785645, y: 22.506226}
+        - {x: -18.214355, y: 93.506226}
+        - {x: -66.214355, y: 93.506226}
+        - {x: -102.214355, y: 56.506226}
+    - name: babyAnimate_5
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 2116
+        width: 341
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.425293, y: 60.338623}
+        - {x: -24.425293, y: 67.33862}
+        - {x: -24.425293, y: 66.33862}
+        - {x: -16.425293, y: 71.33862}
+        - {x: -14.425293, y: 80.33862}
+        - {x: -19.425293, y: 93.33862}
+        - {x: -49.425293, y: 93.33862}
+        - {x: -88.42529, y: 70.33862}
+        - {x: -99.42529, y: 48.338623}
+        - {x: -99.42529, y: -44.661377}
+        - {x: -68.42529, y: -92.66138}
+        - {x: 82.57471, y: -92.66138}
+        - {x: 100.57471, y: -79.66138}
+        - {x: 100.57471, y: -42.661377}
+        - {x: 72.57471, y: 1.338623}
+    - name: babyAnimate_6
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 2092
+        width: 320
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.624878, y: 62.32727}
+        - {x: -33.624878, y: 65.32727}
+        - {x: -29.624878, y: 63.32727}
+        - {x: -27.624878, y: 63.32727}
+        - {x: -20.624878, y: 65.32727}
+        - {x: -4.624878, y: 73.32727}
+        - {x: -15.624878, y: 93.32727}
+        - {x: -36.624878, y: 93.32727}
+        - {x: -93.62488, y: 61.32727}
+        - {x: -93.62488, y: -39.67273}
+        - {x: -74.62488, y: -92.67273}
+        - {x: 94.37512, y: -92.67273}
+        - {x: 94.37512, y: -7.6727295}
+        - {x: -18.624878, y: 65.32727}
+    - name: babyAnimate_7
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 2090
+        width: 327
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.511963, y: 95.159546}
+        - {x: -95.51196, y: 47.159546}
+        - {x: -95.51196, y: -27.840454}
+        - {x: -73.51196, y: -76.840454}
+        - {x: -43.511963, y: -94.840454}
+        - {x: 96.48804, y: -94.840454}
+        - {x: 96.48804, y: -6.840454}
+        - {x: 38.488037, y: 95.159546}
+    - name: babyAnimate_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1666
+        width: 348
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.4503937, y: 19.124817}
+        - {x: -31.549606, y: 78.12482}
+        - {x: -36.549606, y: 82.12482}
+        - {x: -33.549606, y: 81.12482}
+        - {x: -28.549606, y: 75.12482}
+        - {x: -21.549606, y: 73.12482}
+        - {x: -14.549606, y: 83.12482}
+        - {x: -21.549606, y: 97.12482}
+        - {x: -55.549606, y: 97.12482}
+        - {x: -101.54961, y: 61.124817}
+        - {x: -101.54961, y: -20.875183}
+        - {x: -87.54961, y: -70.87518}
+        - {x: -60.549606, y: -83.87518}
+        - {x: -49.549606, y: -80.87518}
+        - {x: -42.549606, y: -74.87518}
+        - {x: -33.549606, y: -95.87518}
+        - {x: 97.45039, y: -95.87518}
+        - {x: 102.45039, y: -85.87518}
+        - {x: 102.45039, y: -45.875183}
+        - {x: 58.450394, y: 16.124817}
+    - name: babyAnimate_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1666
+        width: 326
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.26056, y: 95.12482}
+        - {x: -95.26056, y: 51.124817}
+        - {x: -95.26056, y: -12.875183}
+        - {x: -93.26056, y: -19.875183}
+        - {x: -59.26056, y: -74.87518}
+        - {x: -45.26056, y: -93.87518}
+        - {x: 95.73944, y: -93.87518}
+        - {x: 95.73944, y: 14.124817}
+        - {x: -16.26056, y: 95.12482}
+    - name: babyAnimate_10
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 1666
+        width: 320
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47.53705, y: 13.624817}
+        - {x: -13.462952, y: 93.62482}
+        - {x: -86.46295, y: 93.62482}
+        - {x: -93.46295, y: 92.62482}
+        - {x: -93.46295, y: -63.375183}
+        - {x: -87.46295, y: -92.37518}
+        - {x: 94.53705, y: -92.37518}
+        - {x: 94.53705, y: -30.375183}
+        - {x: 65.53705, y: 9.624817}
+    - name: babyAnimate_11
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 1666
+        width: 342
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.676758, y: 61.624817}
+        - {x: -40.676758, y: 65.62482}
+        - {x: -35.676758, y: 63.624817}
+        - {x: -32.676758, y: 63.624817}
+        - {x: -28.676758, y: 65.62482}
+        - {x: -19.676758, y: 70.62482}
+        - {x: -14.676758, y: 74.62482}
+        - {x: -19.676758, y: 93.62482}
+        - {x: -46.676758, y: 93.62482}
+        - {x: -90.67676, y: 60.624817}
+        - {x: -99.67676, y: 35.624817}
+        - {x: -99.67676, y: -8.375183}
+        - {x: -96.67676, y: -20.375183}
+        - {x: -89.67676, y: -29.375183}
+        - {x: -95.67676, y: -92.37518}
+        - {x: 101.32324, y: -92.37518}
+        - {x: 101.32324, y: -30.375183}
+        - {x: 82.32324, y: 17.624817}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
