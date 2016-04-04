@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class CountingGameManager : MonoBehaviour
 {
+    public static CountingGameManager instance;
+
     public float roundDuration;
     public float endGameDuration;
     public int numberOfRounds;
@@ -11,11 +13,24 @@ public class CountingGameManager : MonoBehaviour
     public List<GameObject> dispenserList;
     public List<bool> activeDispenser;
 
+    public List<int> objectsToCount;
+
     private int currentRound;
 
-    private List<int> objectsToCount;
-
     private List<CountingGamePlayer> players;
+
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Duplicate instance detected, destroying gameObject");
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -39,7 +54,8 @@ public class CountingGameManager : MonoBehaviour
         players = new List<CountingGamePlayer>();
         for(int i = 0; i < 4; ++i)
         {
-            players.Add(new CountingGamePlayer());
+            // check if the player is an ai or human
+            players.Add(new CountingGameAI());
         }
 
         StartCoroutine(Countdown.instance.StartCountdown(Play));
@@ -47,23 +63,14 @@ public class CountingGameManager : MonoBehaviour
 
     void Update()
     {
-        for(int i = 0; i < 4; ++i)
+        foreach(var player in players)
         {
-            if(Input.GetKeyDown(InputHelper.instance.DidControllerButtonGetPressed(i + 1, InputHelper.Button.A)))
-            {
-                players[i].counter++;
-            }
+            player.Update();
         }
     }
 
     IEnumerator Play()
     {
-        // reset the players counters
-        foreach(CountingGamePlayer player in players)
-        {
-            player.counter = 0;
-        }
-
         // pick the dispensers to count based on the round number
         objectsToCount.Clear();
         int count = 0;
@@ -76,6 +83,12 @@ public class CountingGameManager : MonoBehaviour
                 objectsToCount.Add(choice);
                 ++count;
             }
+        }
+
+        // reset the players counters
+        foreach(CountingGamePlayer player in players)
+        {
+            player.StartNewRound();
         }
 
         // reset the dispenser counters and start them
