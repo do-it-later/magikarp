@@ -4,6 +4,8 @@ using System.Collections;
 public class ReflexPlayer : MonoBehaviour {
 
     public int score;
+    public int controllerNumber;
+    public Sprite playerSprite;
 
     private bool canPressButton;
     public bool CanPressButton
@@ -19,6 +21,16 @@ public class ReflexPlayer : MonoBehaviour {
         get { return buttonPressedString; }
     }
 
+    private float timePressed = 0;
+    public float TimePressed { get { return timePressed; } }
+
+    private string target;
+    public string Target
+    {
+        get { return target; }
+        set { target = value; }
+    }
+
 	// Use this for initialization
 	void Start () {
         score = 0;
@@ -32,19 +44,19 @@ public class ReflexPlayer : MonoBehaviour {
             //TODO: Proper mapping to controller
             if( Input.GetKeyDown(KeyCode.A) )
             {
-                SetButtonPressed("A");
+                SetButtonPressed("X");
             }
             else if (Input.GetKeyDown(KeyCode.W))
             {
-                SetButtonPressed("W");
+                SetButtonPressed("Y");
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
-                SetButtonPressed("S");
+                SetButtonPressed("A");
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
-                SetButtonPressed("D");
+                SetButtonPressed("B");
             }
         }
 	}
@@ -53,11 +65,14 @@ public class ReflexPlayer : MonoBehaviour {
     {
         wasButtonPressed = false;
         buttonPressedString = "";
+        timePressed = 9999;
     }
 
     private void SetButtonPressed(string key)
     {
         wasButtonPressed = true;
         buttonPressedString = key;
+        timePressed = Time.time;
+        Debug.Log("Pressed");
     }
 }
